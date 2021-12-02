@@ -3,20 +3,17 @@
 @section('content')
 
 <div class="container">
-    <h1>Gestion des consulttions</h1><br>
+    <h1>Gestion des droits d'accée</h1><br>
     @include('flash-message')
-
  <div class="table-responsive">
                                         <table id="example" class="display" style="width:100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Nom complète</th>
-                                                    <th>Cin</th>
-                                                    <th>Opération</th>
-                                                    <th>Date naissance</th>
-                                                    <th>Télephone</th>
-                                                    <th>Enregistré le</th>
-                                                    <th>Reglage</th>
+                                                    <th>Email</th>
+                                                    <th>Username</th>
+                                                    <th>Fonction</th>
+                                                    <th>Spésialite</th>
+                                                    <th>Action</th>
 
                                                 </tr>
                                             </thead>
@@ -27,8 +24,7 @@
                                                 <td>dffgfd}</td>
                                                 <td>dffgdfg</td>
                                                 <td>dfgdfgdffgdffgd</td>
-                                                <td>dfgdfgdffgdffgd</td>
-                                                <td>dfgdfgdffgdffgd</td>
+
                                                 <td>
                                                     <a href="" class="fas fa-user-edit"></a>
                                                     <a style="color: red;" href="" class="fas fa-user-slash">
@@ -42,6 +38,6 @@
                                         </table>
                                         
                                     </div>
-                                </div>
                                     <!-- end table-responsive-->
+                                </div>
                                     @endsection

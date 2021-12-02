@@ -3,20 +3,19 @@
 @section('content')
 
 <div class="container">
-    <h1>Gestion des consulttions</h1><br>
+    <h1>Gestion des Ordonnances</h1><br>
     @include('flash-message')
-
  <div class="table-responsive">
                                         <table id="example" class="display" style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th>Nom complète</th>
                                                     <th>Cin</th>
-                                                    <th>Opération</th>
-                                                    <th>Date naissance</th>
-                                                    <th>Télephone</th>
-                                                    <th>Enregistré le</th>
-                                                    <th>Reglage</th>
+                                                    <th>Traitment</th>
+                                                    <th>Usage</th>
+                                                    <th>Observation</th>
+                                                    <th>Date traitment</th>
+                                                    <th>Action</th>
 
                                                 </tr>
                                             </thead>

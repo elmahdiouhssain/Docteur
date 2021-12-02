@@ -37,7 +37,7 @@
                         <ul class="nav flex-column">
                       
                             <li class="nav-item">
-                                <a class="nav-link" onclick="getPatient();" href="#">Patient</a>
+                                <a class="nav-link" href="{{ route('dash.patient') }}">Patient</a>
                             </li>
 
                             <li class="nav-item">
@@ -54,7 +54,7 @@
                 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="getordonnance();" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i> Ordonnances</a>
+                    <a class="nav-link" href="{{ route('dash.ordonnance') }}" ><i class="fas fa-fw fa-file"></i> Ordonnances</a>
                   
                 </li>
                 <li class="nav-item">
@@ -62,19 +62,39 @@
                 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder" id="Convocation"></i> droits d’accès </a>
+                    <a class="nav-link" href="{{ route('dash.access') }}" ><i class="fas fa-f fa-folder"></i> Droits d’accès </a>
              
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
-                       <i class="fas fa-f fa-folder" id="Convocation"></i> Médicaments</a>
+                    <a class="nav-link" href="{{ route('dash.medicaments') }}">
+                       <i class="fas fa-f fa-folder"></i> Médicaments</a>
                     </li>
-                
-                
-                <li>
-                    <a href="/area/utilisateurs"><i class="fas fa-users"></i> Utilisateurs</a>
-                </li>
-                
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dash.payments') }}">
+                           <i class="fas fa-money-bill-alt"></i> Gestion de paiment</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-ambulance"></i> Analyse &amp; radiologique</a>
+                            <div id="submenu-8" class="submenu collapse show" style="">
+                                <ul class="nav flex-column">
+                              
+                                    <li class="nav-item">
+                                        <a class="nav-link"  href="{{ route('dash.analyse') }}"> Analyse &amp; radiologique Patient </a>
+                                    </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dash.radiologie') }}"> Paramétrage d'analyse &amp; radiologique</a>
+
+                        </li>                              
+
+                               
+
+
+                                  
+                                </ul>
+                            </div>
+                        </li>
 
             
             </ul>

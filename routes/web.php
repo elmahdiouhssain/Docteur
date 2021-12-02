@@ -28,7 +28,18 @@ Route::post('/custom-signin', [AuthController::class, 'createSignin'])->name('si
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [DashController::class, 'DashIndex'])->name('dash.index');
     Route::get('/profile', [DashController::class, 'DashIndex'])->name('dash.profile');
+    Route::get('/patient', [DashController::class, 'Patient'])->name('dash.patient');
+
     Route::get('/consultation', [DashController::class, 'Consultaions'])->name('dash.consultation');
+    Route::get('/ordonnance', [DashController::class, 'Ordonnance'])->name('dash.ordonnance');
+    Route::get('/access', [DashController::class, 'DroiAccess'])->name('dash.access');
+    Route::get('/medicaments', [DashController::class, 'Medicaments'])->name('dash.medicaments');
+    Route::get('/payments', [DashController::class, 'Payments'])->name('dash.payments');
+    Route::get('/analyse', [DashController::class, 'Analyse'])->name('dash.analyse');
+    Route::get('/radiologie', [DashController::class, 'Radiologie'])->name('dash.radiologie');
+
+
+
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 

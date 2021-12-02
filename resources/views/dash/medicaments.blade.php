@@ -3,20 +3,17 @@
 @section('content')
 
 <div class="container">
-    <h1>Gestion des consulttions</h1><br>
+    <h1>Information sur les médicament</h1><br>
     @include('flash-message')
 
  <div class="table-responsive">
                                         <table id="example" class="display" style="width:100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Nom complète</th>
-                                                    <th>Cin</th>
-                                                    <th>Opération</th>
-                                                    <th>Date naissance</th>
-                                                    <th>Télephone</th>
+                                                    <th>Titre</th>
+                                                    <th>Observation</th>
                                                     <th>Enregistré le</th>
-                                                    <th>Reglage</th>
+                                                    <th>Action</th>
 
                                                 </tr>
                                             </thead>
@@ -26,9 +23,7 @@
                                                 <td>dfgdfg</td>
                                                 <td>dffgfd}</td>
                                                 <td>dffgdfg</td>
-                                                <td>dfgdfgdffgdffgd</td>
-                                                <td>dfgdfgdffgdffgd</td>
-                                                <td>dfgdfgdffgdffgd</td>
+
                                                 <td>
                                                     <a href="" class="fas fa-user-edit"></a>
                                                     <a style="color: red;" href="" class="fas fa-user-slash">

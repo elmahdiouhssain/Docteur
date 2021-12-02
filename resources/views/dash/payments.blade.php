@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="container">
-    <h1>Gestion des consulttions</h1><br>
+    <h1>Gestion des détails de Paiment
+    </h1><br>
     @include('flash-message')
 
  <div class="table-responsive">
@@ -12,11 +13,12 @@
                                                 <tr>
                                                     <th>Nom complète</th>
                                                     <th>Cin</th>
-                                                    <th>Opération</th>
-                                                    <th>Date naissance</th>
-                                                    <th>Télephone</th>
-                                                    <th>Enregistré le</th>
-                                                    <th>Reglage</th>
+                                                    <th>Titre de payment</th>
+                                                    <th>Avance</th>
+                                                    <th>Total</th>
+                                                    <th>Observation</th>
+                                                    <th>Date de payment</th>
+                                                    <th>Action</th>
 
                                                 </tr>
                                             </thead>
@@ -26,6 +28,7 @@
                                                 <td>dfgdfg</td>
                                                 <td>dffgfd}</td>
                                                 <td>dffgdfg</td>
+                                                <td>dfgdfgdffgdffgd</td>
                                                 <td>dfgdfgdffgdffgd</td>
                                                 <td>dfgdfgdffgdffgd</td>
                                                 <td>dfgdfgdffgdffgd</td>

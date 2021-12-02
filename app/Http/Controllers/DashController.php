@@ -14,6 +14,10 @@ class DashController extends Controller
     {
         return view('dash.index');
     }  
+    public function Patient()
+    {
+        return view('dash.patient');
+    }
     public function Profile()
     {
         return view('dash.profile');
@@ -22,5 +26,30 @@ class DashController extends Controller
     {
         return view('dash.consultations');
     }
+    public function Ordonnance()
+    {
+        return view('dash.ordonance');
+    }
+    public function DroiAccess()
+    {
+        return view('dash.access');
+    }
+    public function Medicaments()
+    {
+        return view('dash.medicaments');
+    }
+    public function Payments()
+    {
+        return view('dash.payments');
+    }
+    public function Analyse()
+    {
+        return view('dash.analyse');
+    }
+    public function Radiologie()
+    {
+        return view('dash.radiologie');
+    }
+
 
 }
