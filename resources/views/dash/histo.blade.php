@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h1>Information Personnelle de patient</h1><br>
+    <h1>Gestion des Consultations et des Contrôle</h1><br>
     @include('flash-message')
 
  <div class="table-responsive">
@@ -13,10 +13,9 @@
 
                                                     <th>Cin</th>
                                                     <th>Nom complète</th>
-                                                    <th>Date de naissance</th>
-                                                    <th>Telephone</th>
+                                                    <th>Date d'operation</th>
+                                                    <th>Opération</th>
                                                     <th>Enregistré le</th>
-                                                    <th>Action</th>
 
                                                 </tr>
                                             </thead>
@@ -30,13 +29,6 @@
                                                 <td>dffgdfg</td>
                                                 <td>dffgdfg</td>
 
-                                                <td>
-                                                    <a href="" class="fas fa-user-edit"></a>
-                                                    <a style="color: red;" href="" class="fas fa-user-slash">
-                                                  </a>
-                                                  <a style="color: red;" href="" class="fas fa-trash">
-                                                  </a>
-                                                </td>
                                             </tr>
                                           
                                         </tbody>

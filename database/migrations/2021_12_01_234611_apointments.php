@@ -17,11 +17,12 @@ class Apointments extends Migration
         //
         Schema::create('apointments', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('cin');
-            $table->string('date');
-            $table->string('titre');
-            $table->text('observation');
+            $table->string('fullname')->nullable();
+            $table->string('cin')->nullable();
+            $table->dateTime('start');
+            $table->dateTime('end');
+            $table->string('title');
+            $table->text('observation')->nullable();
             $table->boolean('is_donee')->default(False);
             $table->timestamps();
         });
