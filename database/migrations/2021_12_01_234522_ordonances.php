@@ -16,11 +16,12 @@ class Ordonances extends Migration
         //
         Schema::create('ordonnances', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('cin');
-            $table->string('traitment');
-            $table->string('usage');
-            $table->text('observation');
+            $table->string('fullname')->nullable();
+            $table->string('cin')->nullable();
+            $table->text('traitment');
+            $table->string('usage')->nullable();
+            $table->text('observation')->nullable();
+            $table->dateTime('date_traitment');
             //$table->boolean('is_active')->default(False);
             $table->timestamps();
         });

@@ -16,10 +16,12 @@ class Clients extends Migration
         //
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('cin');
-            $table->string('date');
-            $table->string('genre');
+            $table->string('email')->unique()->nullable();
+            $table->string('fullname')->nullable();
+            $table->string('addr')->nullable();
+            $table->string('cin')->nullable();
+            $table->dateTime('date')->nullable();
+            $table->string('genre')->nullable();
             //$table->boolean('is_active')->default(False);
             $table->timestamps();
         });

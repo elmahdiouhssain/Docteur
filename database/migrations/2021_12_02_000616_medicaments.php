@@ -16,9 +16,9 @@ class Medicaments extends Migration
         //
         Schema::create('medicaments', function (Blueprint $table) {
             $table->id();
-            $table->string('prix');
+            $table->string('prix')->nullable();
             $table->string('titre');
-            $table->text('observation');
+            $table->text('observation')->nullable();
             //$table->boolean('onstock')->default(True);
             $table->timestamps();
         });

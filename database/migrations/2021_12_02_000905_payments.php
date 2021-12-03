@@ -17,12 +17,12 @@ class Payments extends Migration
          Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
-            $table->string('cin');
-            $table->string('date');
-            $table->string('genre');
+            $table->string('cin')->nullable();
+            $table->dateTime('date');
+            $table->string('genre')->nullable();
             $table->bigInteger('prix');
             $table->string('operation');
-            $table->text('observation');
+            $table->text('observation')->nullable();
 
             //$table->boolean('is_active')->default(False);
             $table->timestamps();

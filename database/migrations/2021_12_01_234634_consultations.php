@@ -17,11 +17,12 @@ class Consultations extends Migration
          Schema::create('consultations', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
-            $table->string('cin');
-            $table->string('poid');
-            $table->bigInteger('prix');
+            $table->string('cin')->nullable();
+            $table->string('poid')->nullable();
+            $table->bigInteger('prix')->nullable();
             $table->string('operation');
-            $table->text('observation');
+            $table->dateTime('date_operation');
+            $table->text('observation')->nullable();
             //$table->boolean('is_active')->default(False);
             $table->timestamps();
         });

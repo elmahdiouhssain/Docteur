@@ -48,6 +48,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/consultation', [DashController::class, 'Consultaions'])->name('dash.consultation');
     Route::get('/ordonnance', [DashController::class, 'Ordonnance'])->name('dash.ordonnance');
     Route::get('/rendez-vous', [DashController::class, 'Rendezvous'])->name('dash.rendezvous');
+    Route::post('/rendez-vous/nouveau', [DashController::class, 'NewRendezvous'])->name('dash.newrendezvous');
+
     Route::get('/access', [DashController::class, 'DroiAccess'])->name('dash.access');
     Route::get('/medicaments', [DashController::class, 'Medicaments'])->name('dash.medicaments');
     Route::get('/payments', [DashController::class, 'Payments'])->name('dash.payments');

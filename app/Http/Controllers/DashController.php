@@ -79,6 +79,8 @@ class DashController extends Controller
     {
         return view('dash.ordonance');
     }
+
+    /////////Rende-vous section////////
     public function Rendezvous()
     {
         $data = array();
@@ -86,6 +88,34 @@ class DashController extends Controller
 
         return view('dash.rendezvous')->withData($data);
     }
+    public function NewRendezvous(Request $request)
+    {
+        $data = array();
+	    $this->validate($request, [
+            //'fullname' => 'required|min:2',
+            //'cin' => 'required',
+            'title' => 'required',
+            'start' => 'required',
+            'end' => 'required',
+
+            //'observation' => 'required',
+
+         ]);
+            $pack = new Apointment();
+            $pack->fullname = $request->input('fullname');
+            $pack->cin = $request->input('cin');
+            $pack->title = $request->input('title');
+            $pack->start = $request->input('start');
+            $pack->end = $request->input('end');
+            $pack->observation = $request->input('observation');
+
+            $pack->save();
+          return redirect('/rendez-vous')->with('success', 'Le rendez-vous ajouter avec succeé');
+
+        return view('dash.rendezvous')->withData($data);
+    }
+    /////////End Rende-vous section////////
+
     public function DroiAccess()
     {
         return view('dash.access');
