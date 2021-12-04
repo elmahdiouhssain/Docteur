@@ -22,7 +22,11 @@
                                             <tr>
                                                 <td>{{ $line->email }}</td>
                                                 <td>{{ $line->name }}</td>
-                                                <td>{{ $line->is_admin }}</td>
+                                                @if($line->is_admin =='1')
+                                                <td style="color: green">Docteur</td>
+                                                @else
+                                                <td style="color: indigo">Assistant</td>
+                                                @endif
                                                 <td>{{ $line->created_at }}</td>
                                                 <td>
                                                 

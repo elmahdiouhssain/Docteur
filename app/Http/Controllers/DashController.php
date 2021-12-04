@@ -10,6 +10,10 @@ use App\Models\Apointment;
 use App\Models\clients;
 use App\Models\consultations;
 use App\Models\ordonnances;
+use App\Models\medicaments;
+use App\Models\payments;
+use App\Models\analyses;
+use App\Models\radiologies;
 
 use Session;
 use Hash;
@@ -19,7 +23,12 @@ class DashController extends Controller
     //
     public function DashIndex()
     {
-        return view('dash.index');
+        $data = array();
+	    $data['paiments'] = payments::all()->count();
+	    $data['clients'] = clients::all()->count();
+        $data['analyses'] = analyses::all()->count();
+        $data['consultaions'] = Consultations::all()->count();
+        return view('dash.index')->withData($data);
     }  
     ////////Patient ection//////////
     public function Patient()
@@ -274,20 +283,74 @@ class DashController extends Controller
 	    $data['allusers'] = User::all();
         return view('dash.access')->withData($data);
     }
+    /////////////medicament////////////////////////////////
     public function Medicaments()
     {
-        return view('dash.medicaments');
+        $data = array();
+	    $data['medicaments'] = medicaments::all();
+        return view('dash.medicaments')->withData($data);
     }
+    public function NewMedicament(Request $request)
+    {
+        $data = array();
+	    $this->validate($request, [
+            'titre' => 'required',
+         ]);
+            $pack = new medicaments();
+            $pack->titre = $request->input('titre');
+            $pack->prix = $request->input('prix');
+            $pack->observation = $request->input('observation');
+
+            $pack->save();
+          return redirect('/medicaments')->with('success', 'Le medicament ajouter avec succeé');
+
+        return view('dash.medicaments')->withData($data);
+    }
+    public function delMedicaments($id) {
+
+		$pack = medicaments::find($id);
+		$pack->delete();
+
+		return redirect('/medicaments')->with('success', 'Le medicament supprimé avec succeé');
+    }
+    /////////////////end medicaments////////////////////////////////////
     public function Payments()
     {
-        return view('dash.payments');
+        $data = array();
+	    $data['paiments'] = payments::all();
+        return view('dash.payments')->withData($data);
     }
+    public function NewPayment(Request $request)
+    {
+        $data = array();
+	    $this->validate($request, [
+            'fullname' => 'required',
+            'date' => 'required',
+            'prix' => 'required',
+            'observation' => 'required',
+         ]);
+            $pack = new medicaments();
+            $pack->fullname = $request->input('fullname');
+            $pack->prix = $request->input('prix');
+            $pack->observation = $request->input('observation');
+            $pack->date = $request->input('date');
+            $pack->cin = $request->input('cin');
+            $pack->genre = $request->input('genre');
+            $pack->operation = $request->input('operation');
+            
+
+            $pack->save();
+          return redirect('/medicaments')->with('success', 'Le payment ajouter avec succeé');
+    }
+      
     public function Analyse()
     {
         return view('dash.analyse');
     }
     public function Radiologie()
     {
+        $data = array();
+	    $data['radios'] = radiologies::all();
         return view('dash.radiologie');
     }
 

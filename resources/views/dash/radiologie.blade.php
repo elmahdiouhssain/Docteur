@@ -20,23 +20,27 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                          
+                                               
                                             <tr>
 
-                                                <td>dffgdfg</td>
-                                                <td>dffgdfg</td>
-                                                <td>dffgdfg</td>
-                                                <td>dffgdfg</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
 
                                                 <td>
-                                                    <a href="" class="fas fa-user-edit"></a>
-                                                    <a style="color: red;" href="" class="fas fa-user-slash">
-                                                  </a>
-                                                  <a style="color: red;" href="" class="fas fa-trash">
+                                                
+                                                    <a href="/patients/edit/" >
+                                                        <i title="Modifier" class="fas fa-user-edit" style="color: green;"></i>
+                                                      </a>
+                                                 
+                                                  <a href="/patients/dele" >
+                                                    <i title="supp" class="fas fa-trash" style="color: red;" onclick="return confirm('Vous etes-sur supprimé le client?')"></i>
                                                   </a>
                                                 </td>
                                             </tr>
-                                          
+
+                                        
                                         </tbody>
                                         </table>
                                         

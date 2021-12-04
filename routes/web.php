@@ -67,8 +67,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/rendez-vous/edit/{id}', [DashController::class, 'editRev'])->name('dash.editrendezvous');
 
     Route::get('/access', [DashController::class, 'DroiAccess'])->name('dash.access');
+
     Route::get('/medicaments', [DashController::class, 'Medicaments'])->name('dash.medicaments');
+    Route::post('/medicaments/nouveau', [DashController::class, 'NewMedicament'])->name('dash.newme');
+    Route::get('/medicaments/delete/{id}', [DashController::class, 'delMedicaments'])->name('dash.delrmedi');
+
     Route::get('/payments', [DashController::class, 'Payments'])->name('dash.payments');
+    Route::post('/payments/nouveau', [DashController::class, 'NewMedicament'])->name('dash.newpayment'); 
+
     Route::get('/analyse', [DashController::class, 'Analyse'])->name('dash.analyse');
     Route::get('/radiologie', [DashController::class, 'Radiologie'])->name('dash.radiologie');
 

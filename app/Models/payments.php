@@ -15,8 +15,8 @@ class payments extends Model
         'date',
         'cin',
         'observation',
-        'genre',
-        'operation',
+        'avance',
+        'titre',
         'prix',
     ];
 }

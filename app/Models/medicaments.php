@@ -14,6 +14,5 @@ class medicaments extends Model
         'titre',
         'prix',
         'observation',
-
     ];
 }
