@@ -42,11 +42,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dash.patient') }}">Patient</a>
                             </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link"  href="{{ route('dash.historique') }}">Historique </a>
-                            </li>                                 
-                                  
+                          
                           
                         </ul>
                     </div>

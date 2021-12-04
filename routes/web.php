@@ -42,13 +42,29 @@ Route::group(['middleware' => 'auth'], function () {
     //Route::get('/dashboard/profile', [DashboardController::class, 'Showprofile'])->name('changePassword');
     Route::post('/profile/changePassword',[DashController::class, 'postCredentials'])->name('changePassword');
 
-    Route::get('/patient', [DashController::class, 'Patient'])->name('dash.patient');
-    Route::get('/historique', [DashController::class, 'Historique'])->name('dash.historique');
+    Route::get('/patients', [DashController::class, 'Patient'])->name('dash.patient');
+    Route::post('/patients/nouveau', [DashController::class, 'NewPatient'])->name('dash.newpatient');
+    Route::get('/patients/delete/{id}', [DashController::class, 'delClient'])->name('dash.delpatient');
+    Route::get('/patients/edit/{id}', [DashController::class, 'showClient'])->name('dash.showpatient');
+    Route::post('/patients/edit/{id}', [DashController::class, 'editPatient'])->name('dash.editclient');
+
+    //Route::get('/historique', [DashController::class, 'Historique'])->name('dash.historique');
 
     Route::get('/consultation', [DashController::class, 'Consultaions'])->name('dash.consultation');
+    Route::post('/consultation/nouvelle', [DashController::class, 'Newconsultation'])->name('dash.newcons');
+    Route::get('/consultation/delete/{id}', [DashController::class, 'delCons'])->name('dash.delcons');
+    Route::get('/consultation/edit/{id}', [DashController::class, 'showCons'])->name('dash.shocons');
+    Route::post('/consultation/edit/{id}', [DashController::class, 'editCons'])->name('dash.editcons');
+
+
     Route::get('/ordonnance', [DashController::class, 'Ordonnance'])->name('dash.ordonnance');
+    Route::post('/ordonnance/nouvelle', [DashController::class, 'NewOrdonnance'])->name('dash.neword');
+
     Route::get('/rendez-vous', [DashController::class, 'Rendezvous'])->name('dash.rendezvous');
     Route::post('/rendez-vous/nouveau', [DashController::class, 'NewRendezvous'])->name('dash.newrendezvous');
+    Route::get('/rendez-vous/delete/{id}', [DashController::class, 'delRev'])->name('dash.delrendezvous');
+    Route::get('/rendez-vous/edit/{id}', [DashController::class, 'showRev'])->name('dash.showrendezvous');
+    Route::post('/rendez-vous/edit/{id}', [DashController::class, 'editRev'])->name('dash.editrendezvous');
 
     Route::get('/access', [DashController::class, 'DroiAccess'])->name('dash.access');
     Route::get('/medicaments', [DashController::class, 'Medicaments'])->name('dash.medicaments');

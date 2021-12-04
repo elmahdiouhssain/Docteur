@@ -12,28 +12,30 @@
                                                     <th>Email</th>
                                                     <th>Username</th>
                                                     <th>Fonction</th>
-                                                    <th>Spésialite</th>
+                                                    <th>Enregistré le</th>
                                                     <th>Action</th>
 
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                          
+                                                @foreach ($data['allusers'] as $line)
                                             <tr>
-                                                <td>dfgdfg</td>
-                                                <td>dffgfd}</td>
-                                                <td>dffgdfg</td>
-                                                <td>dfgdfgdffgdffgd</td>
-
+                                                <td>{{ $line->email }}</td>
+                                                <td>{{ $line->name }}</td>
+                                                <td>{{ $line->is_admin }}</td>
+                                                <td>{{ $line->created_at }}</td>
                                                 <td>
-                                                    <a href="" class="fas fa-user-edit"></a>
-                                                    <a style="color: red;" href="" class="fas fa-user-slash">
-                                                  </a>
-                                                  <a style="color: red;" href="" class="fas fa-trash">
+                                                
+                                                    <a href="/access/edit/{{ $line->id }}" >
+                                                        <i title="Modifier" class="fas fa-user-edit" style="color: green;"></i>
+                                                      </a>
+                                                 
+                                                  <a href="/access/delete/{{ $line->id }}" >
+                                                    <i title="supp" class="fas fa-trash" style="color: red;" onclick="return confirm('Vous etes-sur supprimé le client?')"></i>
                                                   </a>
                                                 </td>
                                             </tr>
-                                          
+                                            @endforeach
                                         </tbody>
                                         </table>
                                         

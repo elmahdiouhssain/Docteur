@@ -107,7 +107,7 @@
                                             <tr>
                                                 @foreach ($data['rendezvous'] as $line)
                                                 <td>{{ $line->title }}</td>
-                                                <td>{{ $line->name }}</td>
+                                                <td>{{ $line->fullname }}</td>
                                                 <td>{{ $line->cin }}</td>
                                                 <td>{{ $line->start }}</td>
                                                 <td>{{ $line->end }}</td>
@@ -115,12 +115,11 @@
                                                 <td>{{ $line->created_at }}</td>
 
                                                 <td>
-                                                    <a href="" class="fas fa-user-edit"></a>
+                                                    <a href="/rendez-vous/edit/{{ $line->id }}" class="btn btn-dark btn-xs"><i class="fas fa-edit"></i></a>
                                                    
-                                                  <a style="color: red;" href="" class="fas fa-trash">
-                                                  </a>
-                                                </td>
-                                            </tr>
+                                                    <a href="/rendez-vous/delete/{{ $line->id }}" class="btn btn-danger btn-xs" onclick="return confirm('Vous etes-sur supprimé le rendez-vous?')"><i class="fas fa-trash"></i></a>                                                
+                                                    </td>
+                                                </tr>
                                             @endforeach
                                           
                                         </tbody>
